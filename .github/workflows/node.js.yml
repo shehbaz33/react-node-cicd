@@ -2,9 +2,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
@@ -14,12 +14,8 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
-      - run: 
-          npm i
-      - run: 
-          cd frontend
-      - run: 
-          npm i
-      - run :
-          npm run test
+          node-version: "16.x"
+      - run: npm i
+      - run: cd frontend
+      - run: npm i
+      - run: npm run build
